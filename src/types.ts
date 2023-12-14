@@ -1,0 +1,16 @@
+import { type ChainSlug } from "@thirdweb-dev/chains";
+import { type Address } from "viem";
+
+export type EasSchemaVariables = {
+  id: string;
+  chain: ChainSlug;
+  attester: Address;
+  schemaId: string;
+  name: string;
+  targetField: string;
+  allowRecursion?: boolean;
+  displayUnits?: string;
+  conversionMultiplier?: number;
+  conversionMultiplierBigInt?: bigint;
+  isBoolean?: boolean;
+};
