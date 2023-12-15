@@ -14,3 +14,11 @@ export type EasSchemaVariables = {
   conversionMultiplierBigInt?: bigint;
   isBoolean?: boolean;
 };
+
+export type Credential = {
+  name: string;
+  source?: string;
+  timestamp?: Date;
+  reference?: string;
+  chain?: ChainSlug;
+};
