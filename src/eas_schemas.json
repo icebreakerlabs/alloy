@@ -109,5 +109,17 @@
     "targetField": "score",
     "conversionMultiplierBigInt": 100000000000000000,
     "chain": "optimism"
-  }
+  },
+  {
+    "id": "12",
+    "attester": "0xD1ba067be2FcbB524865c0A98d3FCC0E710738d5",
+    "chain": "ethereum",
+    "name": "Farcaster qDAU",
+    "schemaId":
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    "targetField": "isEndorsement",
+    "filter": { "name": "qDAU", "domain": "Farcaster" },
+    "allowRecursion": true,
+    "isBoolean": true
+  },
 ]

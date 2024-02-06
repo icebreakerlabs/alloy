@@ -13,6 +13,7 @@ export type EasSchemaVariables = {
   conversionMultiplier?: number;
   conversionMultiplierBigInt?: bigint;
   isBoolean?: boolean;
+  filter?: Record<string, string | boolean>;
 };
 
 export type Credential = {
