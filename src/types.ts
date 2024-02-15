@@ -3,23 +3,31 @@ import { type Address } from "viem";
 
 export type EasSchemaVariables = {
   id: string;
-  chain: ChainSlug;
+  allowRecursion: boolean;
   attester: Address;
-  schemaId: string;
+  chain: ChainSlug;
+  isEnabled: boolean;
   name: string;
+  schemaId: string;
   targetField: string;
-  allowRecursion?: boolean;
   displayUnits?: string;
   conversionMultiplier?: number;
   conversionMultiplierBigInt?: bigint;
   isBoolean?: boolean;
   filter?: Record<string, string | boolean>;
+  maxRecursion?: number;
 };
 
+// Schema for credential storage on Icebreaker
 export type Credential = {
   name: string;
   source?: string;
   timestamp?: Date;
   reference?: string;
   chain?: ChainSlug;
+};
+export type JomoFlow = {
+  flow_id: string;
+  verification_type: string;
+  name: string;
 };
