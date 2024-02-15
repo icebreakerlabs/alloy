@@ -1,0 +1,137 @@
+[
+  {
+    "flow_id": "103",
+    "verification_type": "polygon_ice_sum_gte_1",
+    "name": "Ice Token Holder"
+  },
+  {
+    "flow_id": "1001",
+    "verification_type": "cryptopunks_sum_gte_1",
+    "name": "CryptoPunks Holder"
+  },
+  {
+    "flow_id": "1002",
+    "verification_type": "cryptopunks_sum_gte_3",
+    "name": "CryptoPunks Whale"
+  },
+  {
+    "flow_id": "1003",
+    "verification_type": "bayc_sum_gte_1",
+    "name": "Bored Ape Holder"
+  },
+  {
+    "flow_id": "1004",
+    "verification_type": "bayc_sum_gte_3",
+    "name": "Bored Ape Whale"
+  },
+  {
+    "flow_id": "1005",
+    "verification_type": "mayc_sum_gte_1",
+    "name": "Mutant Ape Holder"
+  },
+  {
+    "flow_id": "1006",
+    "verification_type": "mayc_sum_gte_3",
+    "name": "Mutant Ape Whale"
+  },
+  {
+    "flow_id": "1007",
+    "verification_type": "azuki_sum_gte_1",
+    "name": "Azuki Holder"
+  },
+  {
+    "flow_id": "1008",
+    "verification_type": "azuki_sum_gte_3",
+    "name": "AzukiWhale"
+  },
+  {
+    "flow_id": "1009",
+    "verification_type": "station3_patron_sum_gte_1",
+    "name": "Station3 Patron"
+  },
+  {
+    "flow_id": "1010",
+    "verification_type": "mfers_sum_gte_1",
+    "name": "Mfers Holder"
+  },
+  {
+    "flow_id": "1011",
+    "verification_type": "mfers_sum_gte_3",
+    "name": "Mfers Whale"
+  },
+  {
+    "flow_id": "1013",
+    "verification_type": "eth_class_of_year",
+    "name": "Crypto Class of"
+  },
+  {
+    "flow_id": "1014",
+    "verification_type": "member_of_powers_of_tau",
+    "name": "Powers of Tau Contributor"
+  },
+  {
+    "flow_id": "1015",
+    "verification_type": "cb_verified_account",
+    "name": "Coinbase zkVerified Account"
+  },
+  {
+    "flow_id": "1016",
+    "verification_type": "clonex_sum_gte_1",
+    "name": "CloneX Holder"
+  },
+  {
+    "flow_id": "1017",
+    "verification_type": "moonbirds_sum_gte_1",
+    "name": "Moonbirds Holder"
+  },
+  {
+    "flow_id": "1018",
+    "verification_type": "proof_sum_gte_1",
+    "name": "Proof Holder"
+  },
+  {
+    "flow_id": "1019",
+    "verification_type": "doodles_sum_gte_1",
+    "name": "Doodles Holder"
+  },
+  {
+    "flow_id": "1020",
+    "verification_type": "bakc_sum_gte_1",
+    "name": "BAKC Holder"
+  },
+  {
+    "flow_id": "1021",
+    "verification_type": "pudgypenguins_sum_gte_1",
+    "name": "Pudgy Holder"
+  },
+  {
+    "flow_id": "1022",
+    "verification_type": "coolcats_sum_gte_1",
+    "name": "Cool Cats Holder"
+  },
+  {
+    "flow_id": "1023",
+    "verification_type": "degods_sum_gte_1",
+    "name": "DeGods Holder"
+  },
+  {
+    "flow_id": "1024",
+    "verification_type": "miladymaker_sum_gte_1",
+    "name": "Milady Holder"
+  },
+  {
+    "flow_id": "1025",
+    "verification_type": "0n1force_sum_gte_1",
+    "name": "0N1 Force Holder"
+  },
+  {
+    "flow_id": "1026",
+    "verification_type": "worldofwomen_sum_gte_1",
+    "name": "World of Women Holder"
+  },
+  {
+    "flow_id": "1027",
+    "verification_type": "parallelalpha_sum_gte_1",
+    "name": "Parallel Alpha Holder"
+  }
+]
