@@ -307,7 +307,7 @@
     "id": "26",
     "isEnabled": true,
     "attester": "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
-    "chain": "ethereum",
+    "chain": "base",
     "name": "Human",
     "schemaEncoding": "bool isEndorsement,string name,string domain,string context",
     "schemaId": "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
