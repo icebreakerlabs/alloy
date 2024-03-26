@@ -16,6 +16,7 @@ export type EasSchemaVariables = {
   isBoolean?: boolean;
   filter?: Record<string, string | boolean>;
   maxRecursion?: number;
+  maxReattestations?: number;
 };
 
 // Schema for credential storage on Icebreaker

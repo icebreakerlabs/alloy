@@ -229,5 +229,91 @@
     "filter": { "name": "Icebreaker x Base Regiftable Gift Box 2023" },
     "allowRecursion": false,
     "isBoolean": false
+  },
+  {
+    "id": "20",
+    "isEnabled": true,
+    "attester": "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    "chain": "ethereum",
+    "name": "qBuilder",
+    "schemaEncoding": "bool isEndorsement,string name,string domain,string context",
+    "schemaId": "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    "targetField": "isEndorsement",
+    "filter": { "name": "qBuilder" },
+    "allowRecursion": true,
+    "isBoolean": true
+  },
+  {
+    "id": "21",
+    "isEnabled": false,
+    "attester": "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    "chain": "base",
+    "name": "Works at",
+    "schemaEncoding": "bool isMember,string name,string role,string context",
+    "schemaId": "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    "targetField": "name",
+    "allowRecursion": false
+  },
+  {
+    "id": "22",
+    "isEnabled": false,
+    "attester": "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    "chain": "ethereum",
+    "name": "Works at",
+    "schemaEncoding": "bool isMember,string name,string role,string context",
+    "schemaId": "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    "targetField": "name",
+    "allowRecursion": false
+  },
+  {
+    "id": "23",
+    "isEnabled": true,
+    "attester": "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    "chain": "base",
+    "name": "Crypto: The Game",
+    "schemaEncoding": "bool isMember,string name,string role,string context",
+    "schemaId": "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    "filter": { "name": "Crypto: The Game" },
+    "targetField": "role",
+    "allowRecursion": false
+  },
+  {
+    "id": "24",
+    "isEnabled": true,
+    "attester": "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    "chain": "base",
+    "name": "Crypto: The Game: Finalist",
+    "schemaEncoding": "bool isMember,string name,string role,string context",
+    "schemaId": "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    "filter": { "name": "Crypto: The Game", "context": "Finalist" },
+    "targetField": "isMember",
+    "allowRecursion": false,
+    "isBoolean": true
+  },
+  {
+    "id": "25",
+    "isEnabled": true,
+    "attester": "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    "chain": "base",
+    "name": "Crypto: The Game | Participant",
+    "schemaEncoding": "bool isMember,string name,string role,string context",
+    "schemaId": "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    "filter": { "name": "Crypto: The Game", "context": "Participant" },
+    "targetField": "isMember",
+    "allowRecursion": false,
+    "isBoolean": true
+  },
+  {
+    "id": "26",
+    "isEnabled": true,
+    "attester": "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    "chain": "ethereum",
+    "name": "Human",
+    "schemaEncoding": "bool isEndorsement,string name,string domain,string context",
+    "schemaId": "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    "targetField": "isEndorsement",
+    "filter": { "name": "Human" },
+    "allowRecursion": true,
+    "isBoolean": true
   }
 ]
