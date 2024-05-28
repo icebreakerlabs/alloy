@@ -919,4 +919,18 @@ export const EAS_SCHEMAS = [
     allowRecursion: true,
     isBoolean: true,
   },
+  {
+    id: "61",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Lounge",
+    schemaEncoding: "bool isMember,string name,string role,string context",
+    schemaId:
+      "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    targetField: "role",
+    filter: { name: "Lounge", isMember: true },
+    allowRecursion: false,
+    isBoolean: false,
+  },
 ] as EasSchemaVariables[];
