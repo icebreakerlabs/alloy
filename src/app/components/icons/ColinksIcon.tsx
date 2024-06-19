@@ -1,6 +1,6 @@
 import { Icon, type IconProps } from ":/app/components/Icon";
 
-export function LumaIcon(props: Omit<IconProps, "children">) {
+export function ColinksIcon(props: Omit<IconProps, "children">) {
   return (
     <Icon viewBox="0 0 32 32" {...props}>
       <svg>
