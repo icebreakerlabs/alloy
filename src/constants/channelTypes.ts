@@ -3,6 +3,7 @@ export const CHANNEL_TYPES = [
   "behance",
   "bluesky",
   "calendar",
+  "colinks",
   "custom",
   "daimo",
   "deca",
@@ -109,6 +110,7 @@ export type VerifiableChannelType = (typeof VERIFIABLE_CHANNEL_TYPES)[number];
 export const CHANNEL_TYPE_PREFIXES: Partial<Record<ChannelType, string>> = {
   behance: "behance.net/",
   bluesky: "bsky.app/profile/",
+  colinks: "colinks.coordinape.com/",
   daimo: "daimo.com/l/account/",
   deca: "deca.art/",
   dune: "dune.com/",
