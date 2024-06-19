@@ -1,5 +1,17 @@
-import { type ChainSlug } from "../types/thirdweb";
+import { type ChainSlug } from "./thirdweb";
 import { type Address } from "viem";
+
+export type AttestationData = {
+  id: string;
+  decodedDataJson: string;
+  timeCreated: string;
+  attester: Address;
+  recipient?: Address;
+};
+
+export type EasAttestationData = {
+  attestationData: AttestationData[];
+};
 
 export type EasSchemaVariables = {
   id: string;
@@ -28,8 +40,25 @@ export type EasSchemaVariables = {
   acquisitionUrl?: string;
 };
 
-export type JomoFlow = {
-  flow_id: string;
-  verification_type: string;
+export type AttestationDataParams = {
   name: string;
+  type: string;
+  value: string | boolean | number;
+};
+
+export type EasQueryData = {
+  name: string;
+  value?: {
+    value: string | boolean | { hex: string };
+  };
+};
+
+export type EasQueryVariables = {
+  recipient: Address;
+  attester: Address;
+  schemaId: string;
+};
+
+export type EasAllQueryVariables = {
+  schemaId: string;
 };
