@@ -1,5 +1,9 @@
 import { type EasSchemaVariables } from "./types";
 
+export const EAS_URL = "https://easscan.org";
+
+export const EAS_LOGO_URL = `${EAS_URL}/logo2.png`;
+
 export const ENABLED_P2P_ATTESTATION_IDS = [
   "6",
   "20",
@@ -24,6 +28,8 @@ export const ENABLED_P2P_ATTESTATION_IDS = [
   "48",
   "56",
   "60",
+  "62",
+  "64",
 ];
 
 export const EAS_SCHEMAS = [
@@ -38,6 +44,10 @@ export const EAS_SCHEMAS = [
     name: "Coinbase Verified Country",
     targetField: "verifiedCountry",
     allowRecursion: false,
+    verb: "Verifies",
+    description: "People who verified their country with Coinbase",
+    acquisitionText: "Visit Coinbase to receive verification",
+    acquisitionUrl: "https://www.coinbase.com/onchain-verify",
   },
   {
     id: "2",
@@ -51,6 +61,10 @@ export const EAS_SCHEMAS = [
     targetField: "verifiedAccount",
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: "People who verified their account with Coinbase",
+    acquisitionText: "Visit Coinbase to receive verification",
+    acquisitionUrl: "https://www.coinbase.com/onchain-verify",
   },
   {
     id: "3",
@@ -65,6 +79,11 @@ export const EAS_SCHEMAS = [
     allowRecursion: false,
     displayUnits: "mi",
     conversionMultiplier: 0.000621371,
+    verb: "Verifies",
+    description:
+      "People who verified their all-time running distance with Receipts",
+    acquisitionText: "Visit Receipts to receive verification",
+    acquisitionUrl: "https://www.receipts.xyz/",
   },
   {
     id: "4",
@@ -79,6 +98,11 @@ export const EAS_SCHEMAS = [
     allowRecursion: false,
     displayUnits: "hours",
     conversionMultiplier: 0.000277778,
+    verb: "Verifies",
+    description:
+      "People who verified their all-time running moving time with Receipts",
+    acquisitionText: "Visit Receipts to receive verification",
+    acquisitionUrl: "https://www.receipts.xyz/",
   },
   {
     id: "5",
@@ -91,6 +115,11 @@ export const EAS_SCHEMAS = [
     name: "Receipts All-Time Running Total Activities",
     targetField: "activities",
     allowRecursion: false,
+    verb: "Verifies",
+    description:
+      "People who verified their all-time running total activities with Receipts",
+    acquisitionText: "Visit Receipts to receive verification",
+    acquisitionUrl: "https://www.receipts.xyz/",
   },
   {
     id: "8",
@@ -105,6 +134,11 @@ export const EAS_SCHEMAS = [
     allowRecursion: false,
     displayUnits: "mi",
     conversionMultiplier: 0.000621371,
+    verb: "Verifies",
+    description:
+      "People who verified their all-time cycling distance with Receipts",
+    acquisitionText: "Visit Receipts to receive verification",
+    acquisitionUrl: "https://www.receipts.xyz/",
   },
   {
     id: "9",
@@ -119,6 +153,11 @@ export const EAS_SCHEMAS = [
     allowRecursion: false,
     displayUnits: "mi",
     conversionMultiplier: 0.000621371,
+    verb: "Verifies",
+    description:
+      "People who verified their all-time swimming distance with Receipts",
+    acquisitionText: "Visit Receipts to receive verification",
+    acquisitionUrl: "https://www.receipts.xyz/",
   },
   {
     id: "10",
@@ -131,6 +170,11 @@ export const EAS_SCHEMAS = [
     targetField: "rating",
     allowRecursion: false,
     chain: "base",
+    verb: "Verifies",
+    description:
+      "People who verified their all-time highest chess rating with Receipts",
+    acquisitionText: "Visit Receipts to receive verification",
+    acquisitionUrl: "https://www.receipts.xyz/",
   },
   {
     id: "11",
@@ -143,6 +187,10 @@ export const EAS_SCHEMAS = [
     name: "Receipts Latest Chess Rating",
     targetField: "rating",
     allowRecursion: false,
+    verb: "Verifies",
+    description: "People who verified their latest chess rating with Receipts",
+    acquisitionText: "Visit Receipts to receive verification",
+    acquisitionUrl: "https://www.receipts.xyz/",
   },
   {
     id: "6",
@@ -156,6 +204,10 @@ export const EAS_SCHEMAS = [
     targetField: "isTall",
     allowRecursion: true,
     isBoolean: true,
+    verb: "Verifies",
+    description: `DAO of Tall people. Men must be at least 6'3" / 190cm and women must be at least 5'10" / 178cm`,
+    acquisitionText:
+      "Any member of this group can immediately verify a new member",
   },
   {
     id: "7",
@@ -169,6 +221,10 @@ export const EAS_SCHEMAS = [
     targetField: "score",
     allowRecursion: false,
     conversionMultiplierBigInt: 100000000000000000n,
+    verb: "Verifies",
+    description: "People who verified their Passport Score with Gitcoin",
+    acquisitionText: "Visit Gitcoin Passport to receive verification",
+    acquisitionUrl: "https://passport.gitcoin.co/",
   },
   {
     id: "12",
@@ -184,6 +240,11 @@ export const EAS_SCHEMAS = [
     filter: { name: "qDAU", domain: "Farcaster" },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    verb: "Endorses",
+    description: `People who received a Farcaster qDAU (quality daily active user) endorsement from another member, with a traceable lineage back to the group creators`,
+    acquisitionText:
+      "Any member of this group can immediately endorse a new member",
   },
   {
     id: "13",
@@ -214,6 +275,10 @@ export const EAS_SCHEMAS = [
     filter: { name: "ETHDenver 2024" },
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: `People who attended ETHDenver 2024`,
+    acquisitionText:
+      "Check in with a Friend of Icebreaker at ETHDenver. Membership closed",
   },
   {
     id: "15",
@@ -229,6 +294,9 @@ export const EAS_SCHEMAS = [
     filter: { hasAttended: true },
     allowRecursion: false,
     isBoolean: false,
+    verb: "Verifies",
+    description: `People who attended an event`,
+    acquisitionText: `Attend an event that's affiliated with Icebreaker or uses a supported partner`,
   },
   {
     id: "16",
@@ -246,6 +314,10 @@ export const EAS_SCHEMAS = [
     maxRecursion: 1,
     maxReattestations: 1,
     isBoolean: true,
+    description:
+      "People who received a qBuilder recommendation from another member, with a specific traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group within 2 degrees of Icebreaker can immediately recommend up to 1 new member",
   },
   {
     id: "17",
@@ -260,6 +332,9 @@ export const EAS_SCHEMAS = [
     filter: { name: "Black Ice" },
     allowRecursion: false,
     isBoolean: true,
+    verb: "Endorses",
+    description: "People who are members of Black Ice. Membership is private",
+    acquisitionText: "By invitation",
   },
   {
     id: "18",
@@ -274,6 +349,9 @@ export const EAS_SCHEMAS = [
     filter: { name: "Icebreaker Metal" },
     allowRecursion: false,
     isBoolean: true,
+    verb: "Endorses",
+    description: "People who possess an Icebreaker Metal card",
+    acquisitionText: "By invitation",
   },
   {
     id: "19",
@@ -288,6 +366,11 @@ export const EAS_SCHEMAS = [
     filter: { name: "Icebreaker x Base Regiftable Gift Box 2023" },
     allowRecursion: false,
     isBoolean: false,
+    verb: "Verifies",
+    description:
+      "Winners of Icebreaker x Base Regiftable Gift Box 2023 contest",
+    acquisitionText:
+      "Participation in Icebreaker x Base Regiftable Gift Box 2023 contest. Membership closed",
   },
   {
     id: "20",
@@ -303,6 +386,12 @@ export const EAS_SCHEMAS = [
     filter: { name: "qBuilder" },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    verb: "Recommends",
+    description:
+      "People who received a qBuilder (quality builder) recommendation with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "21",
@@ -327,6 +416,7 @@ export const EAS_SCHEMAS = [
       "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
     targetField: "name",
     allowRecursion: false,
+    allowMultiple: true,
   },
   {
     id: "23",
@@ -340,6 +430,10 @@ export const EAS_SCHEMAS = [
     filter: { name: "Crypto: The Game" },
     targetField: "role",
     allowRecursion: false,
+    verb: "Verifies",
+    description: "People who participated in Crypto: The Game, Season 1",
+    acquisitionText:
+      "Participation in Crypto: The Game, Season 1. Membership closed",
   },
   {
     id: "24",
@@ -354,6 +448,10 @@ export const EAS_SCHEMAS = [
     targetField: "isMember",
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: "People who were finalists in Crypto: The Game, Season 1",
+    acquisitionText:
+      "Finalist in Crypto: The Game, Season 1. Membership closed",
   },
   {
     id: "25",
@@ -368,6 +466,10 @@ export const EAS_SCHEMAS = [
     targetField: "isMember",
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: "People who participated in Crypto: The Game, Season 1",
+    acquisitionText:
+      "Participation in Crypto: The Game, Season 1. Membership closed",
   },
   {
     id: "26",
@@ -383,6 +485,12 @@ export const EAS_SCHEMAS = [
     filter: { name: "Human" },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    verb: "Endorses",
+    description:
+      "People who received a Human endorsement from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately endorse a new member",
   },
   {
     id: "27",
@@ -396,6 +504,12 @@ export const EAS_SCHEMAS = [
     targetField: "communityRole",
     allowRecursion: false,
     isBoolean: false,
+    verb: "Verifies",
+    description:
+      "People who received an Ethereum Attestation Service Fellowship verification",
+    acquisitionText:
+      "Apply and be accepted to the Ethereum Attestation Service Fellowship",
+    acquisitionUrl: "https://attest.org/fellowship",
   },
   {
     id: "28",
@@ -411,6 +525,12 @@ export const EAS_SCHEMAS = [
     filter: { name: "Faculty/Staff", domain: "University of Cincinnati" },
     allowRecursion: true,
     isBoolean: true,
+    verb: "Verifies",
+    description:
+      "People who received a UC Faculty/Staff verification from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately verify a new member",
+    acquisitionUrl: "https://www.uc.edu/",
   },
   {
     id: "29",
@@ -425,6 +545,10 @@ export const EAS_SCHEMAS = [
     filter: { isMember: true },
     allowRecursion: false,
     isBoolean: false,
+    verb: "Verifies",
+    description:
+      "People who verified ownership of an email address. Membership is private.",
+    acquisitionText: "Link a work email address to Icebreaker",
   },
   {
     id: "30",
@@ -438,6 +562,12 @@ export const EAS_SCHEMAS = [
     targetField: "bro",
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    verb: "Endorses",
+    description:
+      "People who received a bro endorsement from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "31",
@@ -452,6 +582,11 @@ export const EAS_SCHEMAS = [
     filter: { name: "New Yorker", isMember: true },
     allowRecursion: true,
     isBoolean: true,
+    verb: "Endorses",
+    description:
+      "People who received a New Yorker endorsement from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately endorse a new member",
   },
   {
     id: "32",
@@ -466,6 +601,10 @@ export const EAS_SCHEMAS = [
     filter: { name: "FarCon 2024 Pass", isMember: true },
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: "People who held FarCon 2024 tickets",
+    acquisitionText:
+      "Hold an Unlock ticket NFT as of FarCon 2024. Membership closed",
   },
   {
     id: "33",
@@ -481,6 +620,9 @@ export const EAS_SCHEMAS = [
     filter: { name: "FarCon 1", hasAttended: true },
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: "People who attended FarCon 1",
+    acquisitionText: "Attend FarCon 1. Membership closed",
   },
   {
     id: "34",
@@ -496,6 +638,10 @@ export const EAS_SCHEMAS = [
     filter: { name: "FarCon 2024", hasAttended: true },
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: "People who attended FarCon 2024",
+    acquisitionText:
+      "Check in with your Unlock ticket at FarCon 2024. Membership closed",
   },
   {
     id: "35",
@@ -510,6 +656,9 @@ export const EAS_SCHEMAS = [
     filter: { isMember: true, role: "Channel Host", context: "Farcaster" },
     allowRecursion: false,
     isBoolean: false,
+    verb: "Verifies",
+    description: "People who are Farcaster Channel Hosts",
+    acquisitionText: "Tag Icebreaker on Farcaster as a Channel Host",
   },
   {
     id: "36",
@@ -529,6 +678,10 @@ export const EAS_SCHEMAS = [
     allowRecursion: true,
     isBoolean: true,
     isOpen: true,
+    allowMultiple: true,
+    verb: "Worked directly with",
+    description: 'People who received a "Worked directly with" verification',
+    acquisitionText: `Anyone can give a "Worked directly with" to anyone else. Mutual verifications will be displayed`,
   },
   {
     id: "37",
@@ -548,6 +701,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Product recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "38",
@@ -567,6 +725,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Design recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "39",
@@ -586,6 +749,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Engineering recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "40",
@@ -605,6 +773,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Marketing recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "41",
@@ -624,6 +797,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Legal recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "42",
@@ -643,6 +821,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Finance recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "43",
@@ -662,6 +845,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Operations recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "44",
@@ -681,6 +869,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Sales recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "45",
@@ -700,6 +893,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Support recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "46",
@@ -719,6 +917,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Talent recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "47",
@@ -738,6 +941,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Data recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "48",
@@ -757,6 +965,11 @@ export const EAS_SCHEMAS = [
     },
     allowRecursion: true,
     isBoolean: true,
+    allowMultiple: true,
+    description:
+      "People who received an Expert: Venture Capital recommendation from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately recommend a new member",
   },
   {
     id: "49",
@@ -771,6 +984,9 @@ export const EAS_SCHEMAS = [
     filter: { isWinner: true },
     allowRecursion: false,
     isBoolean: false,
+    verb: "Verifies",
+    description: "People who won a contest",
+    acquisitionText: `Win a contest that's affiliated with Icebreaker or uses a supported partner`,
   },
   {
     id: "50",
@@ -785,6 +1001,10 @@ export const EAS_SCHEMAS = [
     targetField: "cyberID",
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: "People who verified their account with CyberID",
+    acquisitionText: "Visit CyberID to receive verification",
+    acquisitionUrl: "https://wallet.cyber.co/",
   },
   {
     id: "51",
@@ -799,6 +1019,10 @@ export const EAS_SCHEMAS = [
     filter: { name: "FarCon 2024 Community Pass", isMember: true },
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: "People who held FarCon 2024 Community Pass tickets",
+    acquisitionText:
+      "Hold an Unlock ticket NFT as of FarCon 2024. Membership closed",
   },
   {
     id: "52",
@@ -813,6 +1037,10 @@ export const EAS_SCHEMAS = [
     filter: { name: "FarCon 2024 Summit Pass", isMember: true },
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: "People who held FarCon 2024 Summit Pass tickets",
+    acquisitionText:
+      "Hold an Unlock ticket NFT as of FarCon 2024. Membership closed",
   },
   {
     id: "53",
@@ -828,6 +1056,9 @@ export const EAS_SCHEMAS = [
     filter: { name: "New Internet City 002", hasAttended: true },
     allowRecursion: false,
     isBoolean: true,
+    verb: "Verifies",
+    description: `People who attended New Internet City 002`,
+    acquisitionText: `Check in with a Friend of Icebreaker at New Internet City 002. Membership closed`,
   },
   {
     id: "54",
@@ -841,6 +1072,10 @@ export const EAS_SCHEMAS = [
     targetField: "isEnsDelegate",
     filter: { isEnsDelegate: true },
     isBoolean: true,
+    verb: "Verifies",
+    description: "People who are ENS Delegates with CATTS",
+    acquisitionText: "Visit CATTS to receive verification",
+    acquisitionUrl: "https://catts.run/",
   },
   {
     id: "56",
@@ -856,6 +1091,11 @@ export const EAS_SCHEMAS = [
     filter: { name: "Icy" },
     allowRecursion: true,
     isBoolean: true,
+    verb: "Endorses",
+    description:
+      "People who received a Icy endorsement from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately endorse a new member",
   },
   {
     id: "57",
@@ -871,6 +1111,11 @@ export const EAS_SCHEMAS = [
     filter: { name: "Blue Ice" },
     allowRecursion: false,
     isBoolean: true,
+    verb: "Endorses",
+    description:
+      "People who received a Blue Ice endorsement from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately endorse a new member",
   },
   {
     id: "58",
@@ -889,6 +1134,7 @@ export const EAS_SCHEMAS = [
     },
     isBoolean: false,
     isOpen: true,
+    allowMultiple: true,
   },
   {
     id: "59",
@@ -918,6 +1164,11 @@ export const EAS_SCHEMAS = [
     filter: { name: "Higher" },
     allowRecursion: true,
     isBoolean: true,
+    verb: "Endorses",
+    description:
+      "People who received a Higher endorsement from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately endorse a new member",
   },
   {
     id: "61",
@@ -932,5 +1183,356 @@ export const EAS_SCHEMAS = [
     filter: { name: "Lounge", isMember: true },
     allowRecursion: false,
     isBoolean: false,
+    verb: "Verifies",
+    description: "People who participated in Lounge",
+    acquisitionText: "Participate in a Lounge season as a contributor",
+    acquisitionUrl: "https://warpcast.com/~/channel/lounge",
+  },
+  {
+    id: "62",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "optimism",
+    name: "BuildCity Member",
+    schemaEncoding: "bool isMember,string name,string role,string context",
+    schemaId:
+      "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    targetField: "isMember",
+    filter: { name: "BuildCity", isMember: true },
+    allowRecursion: true,
+    isBoolean: true,
+    maxReattestations: 2,
+    verb: "Endorses",
+    description:
+      "People who received a BuildCity Member endorsement from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately endorse up to 2 new members. Founding members can endorse unlimited members",
+  },
+  {
+    id: "63",
+    isEnabled: true,
+    attester: "0x7e823AE179592525301ceb33b3eC479f8c66ecB9",
+    chain: "base",
+    name: "Coordinape Skill",
+    schemaEncoding:
+      "address from,uint16 amount,string platform,string url,string context,string skill,string tag,string note,uint16 weight",
+    schemaId:
+      "0x82c2ec8ec89cf1d13022ff0867744f1cecf932faa4fe334aa1bb443edbfee3fa",
+    targetField: "skill",
+    isBoolean: false,
+    description:
+      "People who received a Coordinape Skill recommendation from another member",
+    acquisitionText: "Visit CoLinks to receive a recommendation",
+    acquisitionUrl: "https://colinks.coordinape.com/",
+  },
+  {
+    id: "64",
+    isEnabled: true,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Worked with",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "name",
+    filter: {
+      isEndorsement: true,
+      name: "Worked with",
+    },
+    allowRecursion: true,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    verb: "Worked with",
+    description: 'People who received a "Worked with" verification',
+    acquisitionText: `Anyone can give a "Worked with" to anyone else. Mutual verifications will be displayed`,
+  },
+  {
+    id: "65",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Product",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Product",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received a Product recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "66",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Design",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Design",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received a Design recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "67",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Engineering",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Engineering",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received an Engineering recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "68",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Marketing",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Marketing",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received a Marketing recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "69",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Legal",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Legal",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received a Legal recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "70",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Finance",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Finance",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received a Finance recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "71",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Operations",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Operations",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received an Operations recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "72",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Sales",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Sales",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received a Sales recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "73",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Support",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Support",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received a Support recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "74",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Talent",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Talent",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received a Talent recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "75",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Skill: Data",
+    schemaEncoding:
+      "bool isEndorsement,string name,string domain,string context",
+    schemaId:
+      "0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405",
+    targetField: "domain",
+    filter: {
+      isEndorsement: true,
+      name: "Skill",
+      domain: "Data",
+    },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    description:
+      "People who received a Data recommendation from another member",
+    acquisitionText: `Anyone can give a recommendation to anyone else`,
+  },
+  {
+    id: "76",
+    isEnabled: false,
+    attester: "0x78a42a84bfe3e173c3a9246b3f5f1c5aa8bbae72",
+    chain: "optimism",
+    name: "The Arena Builder",
+    schemaEncoding: "bool isMember,string name,string role,string context",
+    schemaId:
+      "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    targetField: "isMember",
+    filter: { name: "The Arena", isMember: true },
+    allowRecursion: true,
+    allowMultiple: true,
+    isBoolean: true,
+    maxReattestations: 2,
+    isRecommendation: true,
+    verb: "Endorses",
+    description:
+      "Builders who received a The Arena endorsement from another member, with a traceable lineage back to the group creator",
+    acquisitionText:
+      "Any member of this group can immediately endorse up to 2 new members. The group creator can endorse unlimited members",
+    acquisitionUrl: "https://warpcast.com/~/channel/the-arena",
   },
 ] as EasSchemaVariables[];
