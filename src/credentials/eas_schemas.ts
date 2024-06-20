@@ -1078,6 +1078,19 @@ export const EAS_SCHEMAS = [
     acquisitionUrl: "https://catts.run/",
   },
   {
+    id: "55",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "optimism",
+    name: "Witnessed Attestations",
+    schemaEncoding: 'bool isWitnessed,string leafIndex"',
+    schemaId:
+      "0x1831e2e1e7eb267380e18bc894e87b83e160b6f11cb15c944d107388df400dbc",
+    targetField: "isWitnessed",
+    filter: { isWitnessed: true },
+    isBoolean: true,
+  },
+  {
     id: "56",
     isEnabled: false,
     attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
