@@ -30,6 +30,25 @@ export const ENABLED_P2P_ATTESTATION_IDS = [
   "60",
   "62",
   "64",
+  "76",
+  "82",
+  "83",
+  "84",
+];
+
+export const EXPLORABLE_ATTESTATION_IDS = [
+  "65",
+  "66",
+  "67",
+  "68",
+  "69",
+  "70",
+  "71",
+  "72",
+  "73",
+  "74",
+  "75",
+  "20",
 ];
 
 export const EAS_SCHEMAS = [
