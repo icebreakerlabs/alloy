@@ -1637,4 +1637,63 @@ export const EAS_SCHEMAS = [
     allowRecursion: false,
     isBoolean: false,
   },
+  {
+    id: "82",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "Interoperators",
+    schemaEncoding: "bool isMember,string name,string role,string context",
+    schemaId:
+      "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    targetField: "isMember",
+    filter: { name: "Interoperators", isMember: true },
+    allowRecursion: true,
+    isBoolean: true,
+    isRecommendation: true,
+    verb: "Endorses",
+    description:
+      "People who received an endorsement for supporting data interoperability from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately endorse a new members",
+  },
+  {
+    id: "83",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "base",
+    name: "Bostonian",
+    schemaEncoding: "bool isMember,string name,string role,string context",
+    schemaId:
+      "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    targetField: "isMember",
+    filter: { name: "Bostonian", isMember: true },
+    allowRecursion: true,
+    isBoolean: true,
+    isRecommendation: true,
+    verb: "Endorses",
+    description:
+      "People who received a Bostonian endorsement from another member, with a traceable lineage back to the group creators",
+    acquisitionText:
+      "Any member of this group can immediately endorse a new member",
+  },
+  {
+    id: "84",
+    isEnabled: false,
+    attester: "0x1CB34c1eC454708e7C849975E8e545B54417CdFf",
+    chain: "ethereum",
+    name: "ACJR Verified",
+    schemaEncoding: "bool isMember,string name,string role,string context",
+    schemaId:
+      "0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d",
+    targetField: "isMember",
+    filter: { name: "ACJR Verified", isMember: true },
+    allowRecursion: true,
+    isBoolean: true,
+    maxReattestations: 0,
+    verb: "Verifies",
+    description:
+      "People who received an ACJR Verified endorsement from an organization admin",
+    acquisitionText: "Only ACJR admins can verify new members",
+  },
 ] as EasSchemaVariables[];
