@@ -1,5 +1,5 @@
-import { type ChainSlug } from "../types/thirdweb";
-import { type Address } from "viem";
+import { type ChainSlug } from '../types/thirdweb';
+import { type Address } from 'viem';
 
 export type EasSchemaVariables = {
   id: string;
@@ -26,6 +26,7 @@ export type EasSchemaVariables = {
   description?: string;
   acquisitionText?: string;
   acquisitionUrl?: string;
+  isRevocable?: boolean;
 };
 
 export type JomoFlow = {

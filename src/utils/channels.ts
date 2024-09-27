@@ -1,5 +1,5 @@
-import { PRIVATE_CHANNEL_TYPES } from ":/constants/channelTypes";
-import { type Channel, type ChannelType } from ":/server/db/types";
+import { PRIVATE_CHANNEL_TYPES } from ':/constants/channelTypes';
+import { type Channel, type ChannelType } from ':/server/db/types';
 
 export function channelToURL(channelType: ChannelType, value?: string) {
   if (!value) {
@@ -7,180 +7,180 @@ export function channelToURL(channelType: ChannelType, value?: string) {
   }
 
   switch (channelType) {
-    case "bluesky": {
+    case 'bluesky': {
       // if the handle already contains a '.', then use that domain
       // otherwise, fall-back to bsky's required domain `.bsky.social`.
-      const handle = value.includes(".") ? value : `${value}.bsky.social`;
+      const handle = value.includes('.') ? value : `${value}.bsky.social`;
 
       return `https://bsky.app/profile/${handle}`;
     }
-    case "deca":
+    case 'deca':
       return `https://deca.art/${value}`;
-    case "email":
+    case 'email':
       return `mailto:${value}`;
-    case "calendar":
+    case 'calendar':
       return value;
-    case "custom":
+    case 'custom':
       return value;
-    case "discord":
+    case 'discord':
       return `https://discordapp.com/users/${value}`;
-    case "ens":
+    case 'ens':
       return `https://app.ens.domains/${value}`;
-    case "farcaster":
+    case 'farcaster':
       return `https://warpcast.com/${value}`;
-    case "friendtech":
+    case 'friendtech':
       return `https://friend.tech/rooms/${value}`;
-    case "gallery":
+    case 'gallery':
       return `https://gallery.so/${value}`;
-    case "github":
+    case 'github':
       return `https://github.com/${value}`;
-    case "instagram":
+    case 'instagram':
       return `https://instagram.com/${value}`;
-    case "lens":
+    case 'lens':
       return `https://hey.xyz/u/${value}`;
-    case "linkedin":
+    case 'linkedin':
       return `https://linkedin.com/in/${value}`;
-    case "linkedin-company":
+    case 'linkedin-company':
       return `https://linkedin.com/company/${value}`;
-    case "linktree":
+    case 'linktree':
       return `https://linktr.ee/${value}`;
-    case "medium":
+    case 'medium':
       return `https://medium.com/${value}`;
-    case "mirror":
+    case 'mirror':
       return `https://mirror.xyz/${value}`;
-    case "nftd":
+    case 'nftd':
       return `https://nf.td/${value}`;
-    case "opensea":
+    case 'opensea':
       return `https://opensea.io/${value}`;
-    case "paragraph":
+    case 'paragraph':
       return `https://paragraph.xyz/${value}`;
-    case "phone":
+    case 'phone':
       return `tel:${value}`;
-    case "portrait":
+    case 'portrait':
       return `https://portrait.so/${value}`;
-    case "readcv":
+    case 'readcv':
       return `https://read.cv/${value}`;
-    case "reddit":
+    case 'reddit':
       return `https://reddit.com/u/${value}`;
-    case "researchhub":
+    case 'researchhub':
       return `https://researchhub.com/user/${value}`;
-    case "signal":
+    case 'signal':
       return `https://signal.me/#p/${value}`;
-    case "soundcloud":
+    case 'soundcloud':
       return `https://soundcloud.com/${value}`;
-    case "spotify":
+    case 'spotify':
       return `https://open.spotify.com/user/${value}`;
-    case "steam":
+    case 'steam':
       return `https://steamcommunity.com/id/${value}`;
-    case "telegram":
+    case 'telegram':
       return `https://t.me/${value}`;
-    case "tenfold":
+    case 'tenfold':
       return `https://tenfold.xyz/profile/${value}`;
-    case "tiktok":
+    case 'tiktok':
       return `https://tiktok.com/${value}`;
-    case "threads":
+    case 'threads':
       return `https://www.threads.net/${value}`;
-    case "twitch":
+    case 'twitch':
       return `https://twitch.tv/${value}`;
-    case "twitter":
+    case 'twitter':
       return `https://twitter.com/${value}`;
-    case "wallet":
+    case 'wallet':
       return `https://etherscan.io/address/${value}`;
-    case "whatsapp":
+    case 'whatsapp':
       return `https://wa.me/${value}`;
-    case "xmtp":
+    case 'xmtp':
       return `https://xmtp.chat/dm/${value}`;
   }
 }
 
 export function channelTypeToText(channelType: ChannelType) {
   switch (channelType) {
-    case "bluesky":
-      return "Bluesky";
-    case "calendar":
-      return "Calendar";
-    case "custom":
-      return "Link";
-    case "deca":
-      return "Deca";
-    case "discord":
-      return "Discord";
-    case "ens":
-      return "ENS";
-    case "email":
-      return "Email";
-    case "farcaster":
-      return "Farcaster";
-    case "friendtech":
-      return "Friendtech";
-    case "gallery":
-      return "Gallery";
-    case "github":
-      return "GitHub";
-    case "instagram":
-      return "Instagram";
-    case "lens":
-      return "Lens";
-    case "linkedin":
-      return "LinkedIn";
-    case "linkedin-company":
-      return "LinkedIn";
-    case "linktree":
-      return "Linktree";
-    case "medium":
-      return "Medium";
-    case "mirror":
-      return "Mirror";
-    case "nftd":
-      return "NFTD";
-    case "opensea":
-      return "OpenSea";
-    case "paragraph":
-      return "Paragraph";
-    case "phone":
-      return "Phone";
-    case "portrait":
-      return "Portrait";
-    case "readcv":
-      return "Read.CV";
-    case "researchhub":
-      return "ResearchHub";
-    case "reddit":
-      return "Reddit";
-    case "signal":
-      return "Signal";
-    case "soundcloud":
-      return "SoundCloud";
-    case "spotify":
-      return "Spotify";
-    case "steam":
-      return "Steam";
-    case "telegram":
-      return "Telegram";
-    case "tenfold":
-      return "Tenfold";
-    case "tiktok":
-      return "TikTok";
-    case "threads":
-      return "Threads";
-    case "twitch":
-      return "Twitch";
-    case "twitter":
-      return "X";
-    case "wallet":
-      return "Wallet";
-    case "whatsapp":
-      return "WhatsApp";
-    case "xmtp":
-      return "XMTP";
+    case 'bluesky':
+      return 'Bluesky';
+    case 'calendar':
+      return 'Calendar';
+    case 'custom':
+      return 'Link';
+    case 'deca':
+      return 'Deca';
+    case 'discord':
+      return 'Discord';
+    case 'ens':
+      return 'ENS';
+    case 'email':
+      return 'Email';
+    case 'farcaster':
+      return 'Farcaster';
+    case 'friendtech':
+      return 'Friendtech';
+    case 'gallery':
+      return 'Gallery';
+    case 'github':
+      return 'GitHub';
+    case 'instagram':
+      return 'Instagram';
+    case 'lens':
+      return 'Lens';
+    case 'linkedin':
+      return 'LinkedIn';
+    case 'linkedin-company':
+      return 'LinkedIn';
+    case 'linktree':
+      return 'Linktree';
+    case 'medium':
+      return 'Medium';
+    case 'mirror':
+      return 'Mirror';
+    case 'nftd':
+      return 'NFTD';
+    case 'opensea':
+      return 'OpenSea';
+    case 'paragraph':
+      return 'Paragraph';
+    case 'phone':
+      return 'Phone';
+    case 'portrait':
+      return 'Portrait';
+    case 'readcv':
+      return 'Read.CV';
+    case 'researchhub':
+      return 'ResearchHub';
+    case 'reddit':
+      return 'Reddit';
+    case 'signal':
+      return 'Signal';
+    case 'soundcloud':
+      return 'SoundCloud';
+    case 'spotify':
+      return 'Spotify';
+    case 'steam':
+      return 'Steam';
+    case 'telegram':
+      return 'Telegram';
+    case 'tenfold':
+      return 'Tenfold';
+    case 'tiktok':
+      return 'TikTok';
+    case 'threads':
+      return 'Threads';
+    case 'twitch':
+      return 'Twitch';
+    case 'twitter':
+      return 'X';
+    case 'wallet':
+      return 'Wallet';
+    case 'whatsapp':
+      return 'WhatsApp';
+    case 'xmtp':
+      return 'XMTP';
   }
 }
 
 export function channelDisplayValue(channelType: ChannelType, value?: string) {
   switch (channelType) {
-    case "calendar":
-      return "Book Time";
-    case "custom":
+    case 'calendar':
+      return 'Book Time';
+    case 'custom':
       return value && new URL(value).hostname;
     default:
       return channelTypeToText(channelType);
@@ -192,5 +192,5 @@ export function isPrivateChannel(channelType: ChannelType) {
 }
 
 export function isPublicChannel(channel: Channel) {
-  return channel.visibility === "public" || !isPrivateChannel(channel.type);
+  return channel.visibility === 'public' || !isPrivateChannel(channel.type);
 }

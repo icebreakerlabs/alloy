@@ -1,5 +1,5 @@
-import { type ChainSlug } from "./thirdweb";
-import { type Address } from "viem";
+import { type ChainSlug } from './thirdweb';
+import { type Address } from 'viem';
 
 export type AttestationData = {
   id: string;
@@ -38,6 +38,7 @@ export type EasSchemaVariables = {
   description?: string;
   acquisitionText?: string;
   acquisitionUrl?: string;
+  isRevocable?: boolean;
 };
 
 export type AttestationDataParams = {
