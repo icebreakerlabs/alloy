@@ -1867,4 +1867,44 @@ export const EAS_SCHEMAS = [
     description: `People who received an endorsement of attendance at FarHack Kampung`,
     acquisitionText: `Receive an endorsement from someone with this attestation`,
   },
+  {
+    id: '90',
+    isEnabled: false,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'base',
+    name: 'Chicagoan',
+    schemaEncoding: 'bool isMember,string name,string role,string context',
+    schemaId:
+      '0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d',
+    targetField: 'isMember',
+    filter: { name: 'Chicagoan', isMember: true },
+    allowRecursion: true,
+    isBoolean: true,
+    isRecommendation: true,
+    verb: 'Endorses',
+    description:
+      'People who received a Chicagoan endorsement from another member, with a traceable lineage back to the group creators',
+    acquisitionText:
+      'Any member of this group can immediately endorse a new member',
+  },
+  {
+    id: '91',
+    isEnabled: false,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'base',
+    name: 'Londoner',
+    schemaEncoding: 'bool isMember,string name,string role,string context',
+    schemaId:
+      '0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d',
+    targetField: 'isMember',
+    filter: { name: 'Londoner', isMember: true },
+    allowRecursion: true,
+    isBoolean: true,
+    isRecommendation: true,
+    verb: 'Endorses',
+    description:
+      'People who received a Londoner endorsement from another member, with a traceable lineage back to the group creators',
+    acquisitionText:
+      'Any member of this group can immediately endorse a new member',
+  },
 ] as EasSchemaVariables[];
