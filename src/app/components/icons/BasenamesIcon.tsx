@@ -1,6 +1,6 @@
 import { Icon, type IconProps } from ':/app/components/Icon';
 
-export function BasenamesIcon(props: Omit<IconProps, 'children'>) {
+export function BasenameIcon(props: Omit<IconProps, 'children'>) {
   return (
     <Icon viewBox="0 0 111 111" {...props}>
       <svg>
