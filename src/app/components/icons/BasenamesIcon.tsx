@@ -1,4 +1,4 @@
-import { Icon, type IconProps } from ':/app/components/Icon';
+import { Icon, type IconProps } from '../Icon';
 
 export function BasenameIcon(props: Omit<IconProps, 'children'>) {
   return (

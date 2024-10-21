@@ -57,7 +57,24 @@ export const CHANNEL_TYPES = [
   'youtube',
 ] as const;
 
-type ChannelType = (typeof CHANNEL_TYPES)[number];
+export type ChannelType = (typeof CHANNEL_TYPES)[number];
+
+export type ChannelMetadata = {
+  name: string;
+  value: string | number;
+};
+
+export type ChannelVisibility = 'public' | 'private';
+
+export type Channel = {
+  type: ChannelType;
+  value?: string;
+  isLinked?: boolean;
+  isVerified?: boolean;
+  visibility?: ChannelVisibility;
+  isLocked?: boolean;
+  metadata?: ChannelMetadata[];
+};
 
 export const EXCLUDED_CHANNEL_TYPES = [
   'apple',

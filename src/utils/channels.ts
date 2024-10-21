@@ -1,5 +1,12 @@
-import { PRIVATE_CHANNEL_TYPES } from ':/constants/channelTypes';
-import { type Channel, type ChannelType } from ':/server/db/types';
+import {
+  CHANNEL_TYPE_PREFIXES,
+  PRIVATE_CHANNEL_TYPES,
+  type Channel,
+  type ChannelType,
+  type PrivateChannelType,
+} from '../constants/channels';
+
+const PROTOCOL_MATCHER = /(^\w+:|^)\/\//;
 
 export function channelToURL(channelType: ChannelType, value?: string) {
   if (!value) {
@@ -12,7 +19,7 @@ export function channelToURL(channelType: ChannelType, value?: string) {
       // otherwise, fall-back to bsky's required domain `.bsky.social`.
       const handle = value.includes('.') ? value : `${value}.bsky.social`;
 
-      return `https://bsky.app/profile/${handle}`;
+      return `https://${CHANNEL_TYPE_PREFIXES[channelType]}${handle}${handle}`;
     }
     case 'deca':
       return `https://deca.art/${value}`;
@@ -95,84 +102,38 @@ export function channelToURL(channelType: ChannelType, value?: string) {
 
 export function channelTypeToText(channelType: ChannelType) {
   switch (channelType) {
-    case 'bluesky':
-      return 'Bluesky';
-    case 'calendar':
-      return 'Calendar';
+    case 'apple':
+    case 'google':
+      return 'Email';
+    case 'basename':
+      return 'Base Name';
+    case 'colinks':
+      return 'CoLinks';
     case 'custom':
       return 'Link';
-    case 'deca':
-      return 'Deca';
-    case 'discord':
-      return 'Discord';
     case 'ens':
-      return 'ENS';
-    case 'email':
-      return 'Email';
-    case 'farcaster':
-      return 'Farcaster';
-    case 'friendtech':
-      return 'Friendtech';
-    case 'gallery':
-      return 'Gallery';
+    case 'nftd':
+    case 'xmtp':
+      return channelType.toUpperCase();
     case 'github':
       return 'GitHub';
-    case 'instagram':
-      return 'Instagram';
-    case 'lens':
-      return 'Lens';
     case 'linkedin':
-      return 'LinkedIn';
     case 'linkedin-company':
       return 'LinkedIn';
-    case 'linktree':
-      return 'Linktree';
-    case 'medium':
-      return 'Medium';
-    case 'mirror':
-      return 'Mirror';
-    case 'nftd':
-      return 'NFTD';
     case 'opensea':
       return 'OpenSea';
-    case 'paragraph':
-      return 'Paragraph';
-    case 'phone':
-      return 'Phone';
-    case 'portrait':
-      return 'Portrait';
-    case 'readcv':
-      return 'Read.CV';
     case 'researchhub':
       return 'ResearchHub';
-    case 'reddit':
-      return 'Reddit';
-    case 'signal':
-      return 'Signal';
     case 'soundcloud':
       return 'SoundCloud';
-    case 'spotify':
-      return 'Spotify';
-    case 'steam':
-      return 'Steam';
-    case 'telegram':
-      return 'Telegram';
-    case 'tenfold':
-      return 'Tenfold';
     case 'tiktok':
       return 'TikTok';
-    case 'threads':
-      return 'Threads';
-    case 'twitch':
-      return 'Twitch';
     case 'twitter':
       return 'X';
-    case 'wallet':
-      return 'Wallet';
     case 'whatsapp':
       return 'WhatsApp';
-    case 'xmtp':
-      return 'XMTP';
+    default:
+      return channelType.charAt(0).toUpperCase() + channelType.slice(1);
   }
 }
 
@@ -187,10 +148,42 @@ export function channelDisplayValue(channelType: ChannelType, value?: string) {
   }
 }
 
-export function isPrivateChannel(channelType: ChannelType) {
-  return PRIVATE_CHANNEL_TYPES.has(channelType);
+export function channelTypeToPlaceholder(channelType: ChannelType) {
+  switch (channelType) {
+    case 'apple':
+      return 'Apple ID email address';
+    case 'calendar':
+      return 'Full URL calendar link';
+    case 'custom':
+      return 'Full URL custom link';
+    case 'ens':
+      return 'ENS name';
+    case 'google':
+    case 'email':
+      return 'Full email address';
+    case 'friendtech':
+      return 'Friendtech address';
+    case 'linkedin-company':
+      return 'Username after linkedin.com/company/';
+    case 'phone':
+    case 'signal':
+    case 'whatsapp':
+      return 'phone number +1234567890';
+    case 'wallet':
+    case 'xmtp':
+      return 'Web3 address';
+    default:
+      return 'Username or handle';
+  }
 }
 
-export function isPublicChannel(channel: Channel) {
+export function isPrivateChannel(channelType: ChannelType) {
+  return PRIVATE_CHANNEL_TYPES.includes(channelType as PrivateChannelType);
+}
+
+export function isPublicChannel(channel: Channel | ChannelType) {
+  if (typeof channel === 'string') {
+    return !isPrivateChannel(channel);
+  }
   return channel.visibility === 'public' || !isPrivateChannel(channel.type);
 }
