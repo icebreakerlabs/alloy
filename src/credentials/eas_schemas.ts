@@ -1,4 +1,4 @@
-import { type EasSchemaVariables } from './types';
+import { type EasSchemaVariables } from '../types/eas';
 
 export const DEFAULT_REF_UID =
   '0x0000000000000000000000000000000000000000000000000000000000000000';
@@ -42,6 +42,8 @@ export const ENABLED_P2P_ATTESTATION_IDS = [
   '84',
   '85',
   '87',
+  '90',
+  '91',
 ];
 // The options when choosing the skill dropdown
 export const EAS_SKILL_SCHEMAS = [
