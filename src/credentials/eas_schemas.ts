@@ -426,6 +426,10 @@ export const EAS_SCHEMAS = [
       'People who received a qBuilder (quality builder) recommendation with a traceable lineage back to the group creators',
     acquisitionText:
       'Any member of this group can immediately recommend a new member',
+    equivalencies: [
+      'colinks:endorsement:qBuilder',
+      'recbot:endorsement:qBuilder',
+    ],
   },
   {
     id: '21',
@@ -721,6 +725,10 @@ export const EAS_SCHEMAS = [
     verb: 'Worked directly with',
     description: 'People who received a "Worked directly with" verification',
     acquisitionText: `Anyone can give a "Worked directly with" to anyone else. Mutual verifications will be displayed`,
+    equivalencies: [
+      'colinks:endorsement:workedDirectlyWith',
+      'recbot:endorsement:workedDirectlyWith',
+    ],
   },
   {
     id: '37',
@@ -1344,6 +1352,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received a Product recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:product', 'recbot:skill:product'],
   },
   {
     id: '66',

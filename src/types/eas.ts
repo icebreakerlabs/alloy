@@ -39,6 +39,7 @@ export type EasSchemaVariables = {
   acquisitionText?: string;
   acquisitionUrl?: string;
   isRevocable?: boolean;
+  equivalencies?: string[];
 };
 
 export type AttestationDataParams = {

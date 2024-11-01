@@ -126,6 +126,8 @@ export function channelTypeToText(channelType: ChannelType) {
       return 'ResearchHub';
     case 'soundcloud':
       return 'SoundCloud';
+    case 'talentprotocol':
+      return 'Talent Protocol';
     case 'tiktok':
       return 'TikTok';
     case 'twitter':
