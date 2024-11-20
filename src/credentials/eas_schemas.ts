@@ -611,6 +611,7 @@ export const EAS_SCHEMAS = [
       'People who received a bro endorsement from another member, with a traceable lineage back to the group creators',
     acquisitionText:
       'Any member of this group can immediately recommend a new member',
+    equivalencies: ['recbot:endorsement:bro'],
   },
   {
     id: '31',
@@ -1983,5 +1984,27 @@ export const EAS_SCHEMAS = [
     verb: 'Endorses',
     description: `Members of Bohemian Grove. Visible only to members`,
     acquisitionText: `Receive an endorsement from another member`,
+  },
+  {
+    id: '95',
+    isEnabled: false,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'ethereum',
+    name: 'Feather Ice',
+    schemaEncoding:
+      'bool isEndorsement,string name,string domain,string context',
+    schemaId:
+      '0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405',
+    targetField: 'isEndorsement',
+    filter: { name: 'Feather Ice' },
+    allowRecursion: false,
+    isBoolean: true,
+    allowMultiple: true,
+    isRecommendation: true,
+    verb: 'Endorses',
+    description:
+      'People who received a Feather Ice endorsement from a qBuilder',
+    acquisitionText: 'Receive an endorsement from a qBuilder',
+    equivalencies: ['recbot:endorsement:featherIce'],
   },
 ] as EasSchemaVariables[];
