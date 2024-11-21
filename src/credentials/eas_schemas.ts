@@ -47,6 +47,7 @@ export const ENABLED_P2P_ATTESTATION_IDS = [
   '92',
   '93',
   '94',
+  '96',
 ];
 // The options when choosing the skill dropdown
 export const EAS_SKILL_SCHEMAS = [
@@ -2006,5 +2007,27 @@ export const EAS_SCHEMAS = [
       'People who received a Feather Ice endorsement from a qBuilder',
     acquisitionText: 'Receive an endorsement from a qBuilder',
     equivalencies: ['recbot:endorsement:featherIce'],
+  },
+  {
+    id: '96',
+    isEnabled: false,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'ethereum',
+    name: 'Chones',
+    schemaEncoding: 'bool isMember,string name,string role,string context',
+    schemaId:
+      '0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d',
+    targetField: 'isMember',
+    filter: { name: 'Chones', isMember: true },
+    allowRecursion: true,
+    isBoolean: true,
+    isPrivate: true,
+    isMembersOnly: true,
+    allowMultiple: true,
+    isRecommendation: true,
+    verb: 'Endorses',
+    description: `Members of Chones. Visible only to members`,
+    acquisitionText: `Receive an endorsement from another member`,
+    equivalencies: ['recbot:endorsement:chones'],
   },
 ] as EasSchemaVariables[];
