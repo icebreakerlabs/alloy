@@ -150,6 +150,11 @@ export const ATTESTATION_SCHEMAS = [
     description: 'Bro endorsements from recbot via Farcaster',
   },
   {
+    id: 'recbot:endorsement:chones',
+    source: 'Farcaster',
+    description: 'Chones endorsements from recbot via Farcaster',
+  },
+  {
     id: 'recbot:endorsement:featherIce',
     source: 'Farcaster',
     description: 'Feather Ice endorsements from recbot via Farcaster',
