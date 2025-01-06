@@ -2003,9 +2003,8 @@ export const EAS_SCHEMAS = [
     allowMultiple: true,
     isRecommendation: true,
     verb: 'Endorses',
-    description:
-      'People who received a Feather Ice endorsement from a qBuilder',
-    acquisitionText: 'Receive an endorsement from a qBuilder',
+    description: 'Accounts suspected to be bots, according to qBuilders',
+    acquisitionText: 'Behave like a bot',
     equivalencies: ['recbot:endorsement:featherIce'],
   },
   {
