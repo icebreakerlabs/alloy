@@ -1,17 +1,6 @@
-import { type AttestationSchema } from ':/types/attestations';
+import { type AttestationSchema } from '../types/attestations';
 
 export const ATTESTATION_SCHEMAS = [
-  {
-    id: 'colinks:endorsement:qBuilder',
-    source: 'EAS',
-    description: 'qBuilder endorsements from colinks via EAS',
-    schemaId:
-      '0x82c2ec8ec89cf1d13022ff0867744f1cecf932faa4fe334aa1bb443edbfee3fa',
-    chain: 'base',
-    schemaEncoding:
-      'address from,uint16 amount,string platform,string url,string context,string skill,string tag,string note,uint16 weight',
-    filter: { skill: 'qBuilder' },
-  },
   {
     id: 'colinks:endorsement:workedDirectlyWith',
     source: 'EAS',
@@ -230,3 +219,11 @@ export const ATTESTATION_SCHEMAS = [
     description: 'Data endorsements from recbot via Farcaster',
   },
 ] as AttestationSchema[];
+
+export const COLINKS_SCHEMAS = ATTESTATION_SCHEMAS.filter(({ id }) =>
+  id.startsWith('colinks:')
+);
+
+export const RECBOT_SCHEMAS = ATTESTATION_SCHEMAS.filter(({ id }) =>
+  id.startsWith('recbot:')
+);
