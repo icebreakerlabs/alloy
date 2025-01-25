@@ -2029,4 +2029,19 @@ export const EAS_SCHEMAS = [
     acquisitionText: `Receive an endorsement from another member`,
     equivalencies: ['recbot:endorsement:chones'],
   },
+  {
+    id: '97',
+    isEnabled: false,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'ethereum',
+    name: 'isTrue',
+    schemaEncoding: 'bool isTrue',
+    schemaId:
+      '0x4eb603f49d68888d7f8b1fadd351b35a252f287ba465408ceb2b1e1e1efd90d5',
+    targetField: 'isTrue',
+    allowRecursion: false,
+    isBoolean: true,
+    verb: 'Validates',
+    description: `Something validated true`,
+  },
 ] as EasSchemaVariables[];
