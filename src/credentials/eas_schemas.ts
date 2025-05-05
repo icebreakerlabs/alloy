@@ -10,64 +10,7 @@ export const EAS_URL = 'https://easscan.org';
 
 export const EAS_LOGO_URL = `${EAS_URL}/logo2.png`;
 
-export const ENABLED_P2P_ATTESTATION_IDS = [
-  '6',
-  '20',
-  '12',
-  '16',
-  '26',
-  '28',
-  '30',
-  '31',
-  '36',
-  '37',
-  '38',
-  '39',
-  '40',
-  '41',
-  '42',
-  '43',
-  '44',
-  '45',
-  '46',
-  '47',
-  '48',
-  '56',
-  '60',
-  '62',
-  '64',
-  '76',
-  '82',
-  '83',
-  '84',
-  '85',
-  '87',
-  '90',
-  '91',
-  '92',
-  '93',
-  '94',
-  '96',
-];
-// The options when choosing the skill dropdown
-export const EAS_SKILL_SCHEMAS = [
-  '65',
-  '66',
-  '67',
-  '68',
-  '69',
-  '70',
-  '71',
-  '72',
-  '73',
-  '74',
-  '75',
-];
-
-// The schemas that are shown in the explore section on the home page
-export const EXPLORABLE_ATTESTATION_IDS = [...EAS_SKILL_SCHEMAS, '20'];
-
-export const EAS_SCHEMAS = [
+const schemas = [
   {
     id: '1',
     isEnabled: true,
@@ -534,6 +477,7 @@ export const EAS_SCHEMAS = [
       'People who received a Human endorsement from another member, with a traceable lineage back to the group creators',
     acquisitionText:
       'Any member of this group can immediately endorse a new member',
+    equivalencies: ['recbot:endorsement:human'],
   },
   {
     id: '27',
@@ -588,6 +532,7 @@ export const EAS_SCHEMAS = [
     filter: { isMember: true },
     allowRecursion: false,
     isBoolean: false,
+    allowMultiple: true,
     verb: 'Verifies',
     description:
       'People who verified ownership of an email address. Membership is private.',
@@ -646,6 +591,7 @@ export const EAS_SCHEMAS = [
     targetField: 'name',
     filter: { name: 'FarCon 2024 Pass', isMember: true },
     allowRecursion: false,
+    isRecommendation: true,
     isBoolean: true,
     verb: 'Verifies',
     description: 'People who held FarCon 2024 tickets',
@@ -665,6 +611,7 @@ export const EAS_SCHEMAS = [
     targetField: 'hasAttended',
     filter: { name: 'FarCon 1', hasAttended: true },
     allowRecursion: false,
+    isRecommendation: true,
     isBoolean: true,
     verb: 'Verifies',
     description: 'People who attended FarCon 1',
@@ -683,6 +630,7 @@ export const EAS_SCHEMAS = [
     targetField: 'hasAttended',
     filter: { name: 'FarCon 2024', hasAttended: true },
     allowRecursion: false,
+    isRecommendation: true,
     isBoolean: true,
     verb: 'Verifies',
     description: 'People who attended FarCon 2024',
@@ -1135,6 +1083,7 @@ export const EAS_SCHEMAS = [
       '0x640fbe0854497111367645de93b34b4ff946d9ab500668e997903913b0199316',
     targetField: 'isEnsDelegate',
     filter: { isEnsDelegate: true },
+    allowRecursion: false,
     isBoolean: true,
     verb: 'Verifies',
     description: 'People who are ENS Delegates with CATTS',
@@ -1152,6 +1101,7 @@ export const EAS_SCHEMAS = [
       '0x1831e2e1e7eb267380e18bc894e87b83e160b6f11cb15c944d107388df400dbc',
     targetField: 'isWitnessed',
     filter: { isWitnessed: true },
+    allowRecursion: false,
     isBoolean: true,
     isRevocable: false,
   },
@@ -1212,6 +1162,7 @@ export const EAS_SCHEMAS = [
       isEndorsement: true,
       name: 'Skill',
     },
+    allowRecursion: false,
     isBoolean: false,
     isOpen: true,
     allowMultiple: true,
@@ -1303,6 +1254,7 @@ export const EAS_SCHEMAS = [
       '0x82c2ec8ec89cf1d13022ff0867744f1cecf932faa4fe334aa1bb443edbfee3fa',
     targetField: 'skill',
     isBoolean: false,
+    allowRecursion: false,
     description:
       'People who received a Coordinape Skill recommendation from another member',
     acquisitionText: 'Visit CoLinks to receive a recommendation',
@@ -1310,7 +1262,7 @@ export const EAS_SCHEMAS = [
   },
   {
     id: '64',
-    isEnabled: true,
+    isEnabled: false,
     attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
     chain: 'ethereum',
     name: 'Worked with',
@@ -1383,6 +1335,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received a Design recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:design', 'recbot:skill:design'],
   },
   {
     id: '67',
@@ -1408,6 +1361,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received an Engineering recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:engineering', 'recbot:skill:engineering'],
   },
   {
     id: '68',
@@ -1433,6 +1387,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received a Marketing recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:marketing', 'recbot:skill:marketing'],
   },
   {
     id: '69',
@@ -1458,6 +1413,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received a Legal recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:legal', 'recbot:skill:legal'],
   },
   {
     id: '70',
@@ -1483,6 +1439,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received a Finance recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:finance', 'recbot:skill:finance'],
   },
   {
     id: '71',
@@ -1508,6 +1465,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received an Operations recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:operations', 'recbot:skill:operations'],
   },
   {
     id: '72',
@@ -1533,6 +1491,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received a Sales recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:sales', 'recbot:skill:sales'],
   },
   {
     id: '73',
@@ -1558,6 +1517,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received a Support recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:support', 'recbot:skill:support'],
   },
   {
     id: '74',
@@ -1583,6 +1543,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received a Talent recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:talent', 'recbot:skill:talent'],
   },
   {
     id: '75',
@@ -1608,6 +1569,7 @@ export const EAS_SCHEMAS = [
     description:
       'People who received a Data recommendation from another member',
     acquisitionText: `Anyone can give a recommendation to anyone else`,
+    equivalencies: ['colinks:skill:data', 'recbot:skill:data'],
   },
   {
     id: '76',
@@ -2044,4 +2006,247 @@ export const EAS_SCHEMAS = [
     verb: 'Validates',
     description: `Something validated true`,
   },
-] as EasSchemaVariables[];
+  {
+    id: '98',
+    isEnabled: false,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'ethereum',
+    name: 'Blockchain at Berkeley',
+    schemaEncoding: 'bool isMember,string name,string role,string context',
+    schemaId:
+      '0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d',
+    targetField: 'isMember',
+    filter: { name: 'Blockchain at Berkeley', isMember: true },
+    allowRecursion: true,
+    isBoolean: true,
+    allowMultiple: true,
+    isRecommendation: true,
+    verb: 'Endorses',
+    description: `Members of Blockchain at Berkeley.`,
+    acquisitionText: `Receive an endorsement from another member`,
+    acquisitionUrl: 'https://blockchain.berkeley.edu/',
+  },
+  {
+    id: '99',
+    isEnabled: false,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'ethereum',
+    name: 'Berkeley Blockchain',
+    schemaEncoding: 'bool isMember,string name,string role,string context',
+    schemaId:
+      '0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d',
+    targetField: 'isMember',
+    filter: { name: 'Berkeley Blockchain', isMember: true },
+    allowRecursion: true,
+    isBoolean: true,
+    allowMultiple: true,
+    isRecommendation: true,
+    verb: 'Endorses',
+    description: `Members of Berkeley Blockchain.`,
+    acquisitionText: `Receive an endorsement from another member`,
+    acquisitionUrl: 'https://berkeley.edu/',
+  },
+  {
+    id: '100',
+    isEnabled: false,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'base',
+    name: 'FarCon 2025 Pass',
+    schemaEncoding: 'bool isMember,string name,string role,string context',
+    schemaId:
+      '0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d',
+    targetField: 'name',
+    filter: { name: 'FarCon 2025 Pass', isMember: true },
+    allowRecursion: false,
+    isBoolean: true,
+    isRecommendation: true,
+    verb: 'Verifies',
+    description: 'People who held FarCon 2025 tickets',
+    acquisitionText:
+      'Hold an Unlock ticket NFT as of FarCon 2025. Membership closed',
+  },
+  {
+    id: '101',
+    isEnabled: true,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'base',
+    name: 'Ice cream',
+    schemaEncoding:
+      'bool isEndorsement,string name,string domain,string context',
+    schemaId:
+      '0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405',
+    targetField: 'isEndorsement',
+    filter: { name: 'Ice cream' },
+    allowRecursion: false,
+    isBoolean: true,
+    isOpen: true,
+    allowMultiple: true,
+    isRecommendation: true,
+    verb: 'Endorses',
+    description: 'People who received ice cream from another member',
+    acquisitionText: 'Anyone can give ice cream to anyone else',
+    equivalencies: ['recbot:endorsement:icecream'],
+  },
+  {
+    id: '102',
+    isEnabled: false,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'base',
+    name: 'FarCon 2025 Builders Day Pass',
+    schemaEncoding: 'bool isMember,string name,string role,string context',
+    schemaId:
+      '0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d',
+    targetField: 'name',
+    filter: { name: 'FarCon 2025 Builders Day Pass', isMember: true },
+    allowRecursion: false,
+    isBoolean: true,
+    isRecommendation: true,
+    verb: 'Verifies',
+    description: 'People who held FarCon 2025 Builders Day tickets',
+    acquisitionText:
+      'Hold an Unlock ticket NFT as of FarCon Builders Day 2025. Membership closed',
+  },
+  {
+    id: '103',
+    isEnabled: true,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'base',
+    name: 'Law & Policy',
+    schemaEncoding: 'bool isMember,string name,string role,string context',
+    schemaId:
+      '0x9de0a92bb14e92843a7403687baeadddef1cc34a477dd22a88c71c0be71a173d',
+    targetField: 'name',
+    filter: { name: 'Law & Policy', isMember: true },
+    allowRecursion: true,
+    isBoolean: true,
+    isPrivate: true,
+    isMembersOnly: true,
+    isRecommendation: true,
+    verb: 'Verifies',
+    description: 'People who are verified Law & Policy attendees',
+    acquisitionText: 'Receive an endorsement from another member',
+    equivalencies: ['recbot:membership:lawpolicy'],
+  },
+  {
+    id: '104',
+    isEnabled: true,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'base',
+    name: 'Vibes',
+    schemaEncoding:
+      'bool isEndorsement,string name,string domain,string context',
+    schemaId:
+      '0xa76299ae6a66b66ff48344f36c0fa657a0a9eeb6721248311df9cf25748e4405',
+    targetField: 'isEndorsement',
+    filter: { name: 'Vibes', isEndorsement: true },
+    allowRecursion: true,
+    isBoolean: true,
+    allowMultiple: true,
+    isRecommendation: true,
+    verb: 'Endorses',
+    description: `People who received a Vibes endorsement from another member, with a traceable lineage back to the group creators`,
+    acquisitionText:
+      'Any member of this group can immediately endorse a new member',
+    equivalencies: ['recbot:endorsement:vibes'],
+  },
+  {
+    id: '105',
+    isEnabled: false,
+    attester: '0x1CB34c1eC454708e7C849975E8e545B54417CdFf',
+    chain: 'base',
+    name: 'Omaha Winner',
+    schemaEncoding: 'bool isWinner,string name,string rank,string context',
+    schemaId:
+      '0xa4d2a6534317f4c06fa59e7021d75342165ba0cfac3672645a8660368a1a342c',
+    targetField: 'isWinner',
+    filter: { name: 'Omaha Winner', isWinner: true },
+    allowRecursion: false,
+    isBoolean: true,
+    verb: 'Verifies',
+    description: 'People who won a game of Omaha poker.',
+    acquisitionText: `Winners only.`,
+    equivalencies: ['recbot:winner:omahawinner'],
+  },
+] as const satisfies EasSchemaVariables[];
+
+type EasSchemaID = (typeof schemas)[number]['id'];
+
+type EasSchemaName = (typeof schemas)[number]['name'];
+
+const ENABLED_P2P_ATTESTATION_IDS: EasSchemaID[] = [
+  '6',
+  '20',
+  '12',
+  '16',
+  '26',
+  '28',
+  '30',
+  '31',
+  '36',
+  '37',
+  '38',
+  '39',
+  '40',
+  '41',
+  '42',
+  '43',
+  '44',
+  '45',
+  '46',
+  '47',
+  '48',
+  '56',
+  '60',
+  '62',
+  '76',
+  '82',
+  '83',
+  '84',
+  '85',
+  '87',
+  '90',
+  '91',
+  '92',
+  '93',
+  '94',
+  '96',
+  '99',
+  '101',
+  '103',
+  '104',
+];
+
+export const EAS_SKILL_SCHEMAS: EasSchemaID[] = [
+  '65',
+  '66',
+  '67',
+  '68',
+  '69',
+  '70',
+  '71',
+  '72',
+  '73',
+  '74',
+  '75',
+];
+
+export const HIGHLIGHTED_ATTESTATIONS: EasSchemaName[] = ['qBuilder'];
+
+export const HIGH_SIGNAL_ATTESTATIONS: EasSchemaName[] = [
+  'qBuilder',
+  'Non Sibi',
+  'Mens et Manus',
+  'Interoperators',
+  'lux sub rosa',
+  'New Yorker',
+];
+
+export const EXPLORABLE_SCHEMAS = schemas.filter(
+  ({ id }) => EAS_SKILL_SCHEMAS.includes(id) || id === '20'
+) as EasSchemaVariables[];
+
+export const ENABLED_P2P_SCHEMAS = schemas.filter(({ id }) =>
+  ENABLED_P2P_ATTESTATION_IDS.includes(id)
+) as EasSchemaVariables[];
+
+export const EAS_SCHEMAS = schemas as EasSchemaVariables[];

@@ -27,6 +27,8 @@ export type EasSchemaVariables = {
   conversionMultiplier?: number;
   conversionMultiplierBigInt?: bigint;
   isBoolean?: boolean;
+  isPrivate?: boolean;
+  isMembersOnly?: boolean;
   filter?: Record<string, string | boolean>;
   maxRecursion?: number;
   maxReattestations?: number;
