@@ -218,6 +218,38 @@ export const ATTESTATION_SCHEMAS = [
     source: 'Farcaster',
     description: 'Data endorsements from recbot via Farcaster',
   },
+  {
+    id: 'recbot:endorsement:icecream',
+    name: 'Ice cream',
+    source: 'Farcaster',
+    description: 'Ice cream endorsements from recbot via Farcaster',
+    isOpen: true,
+    allowRecursion: false,
+  },
+  {
+    id: 'recbot:winner:omahawinner',
+    name: 'Omaha Winner',
+    source: 'Farcaster',
+    description: 'Omaha Winner verifications from recbot via Farcaster',
+    isOpen: false,
+    allowRecursion: false,
+  },
+  {
+    id: 'recbot:endorsement:vibes',
+    name: 'Vibes',
+    source: 'Farcaster',
+    description: 'Vibes endorsements from recbot via Farcaster',
+    isOpen: false,
+    allowRecursion: true,
+  },
+  {
+    id: 'recbot:membership:lawpolicy',
+    name: 'Law & Policy',
+    source: 'Farcaster',
+    description: 'Law & Policy memberships from recbot via Farcaster',
+    isOpen: false,
+    allowRecursion: true,
+  },
 ] as AttestationSchema[];
 
 export const COLINKS_SCHEMAS = ATTESTATION_SCHEMAS.filter(({ id }) =>
